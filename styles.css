@@ -4,10 +4,11 @@
   --orange:#ff8a00;
   --orange2:#ffb340;
   --dark:#050914;
-  --panel:#111827;
+  --panel:rgba(255,255,255,.055);
+  --panel2:rgba(255,255,255,.08);
   --text:#ffffff;
   --muted:#c4c9d4;
-  --line:rgba(255,255,255,.14);
+  --line:rgba(255,255,255,.12);
   --shadow:0 24px 70px rgba(0,0,0,.45);
 }
 
@@ -52,7 +53,7 @@ textarea{
 }
 
 .section{
-  padding:92px 0;
+  padding:88px 0;
 }
 
 .page-loader{
@@ -71,26 +72,26 @@ textarea{
 }
 
 .loader-ring{
-  width:58px;
-  height:58px;
+  width:54px;
+  height:54px;
   border-radius:50%;
-  border:5px solid rgba(255,255,255,.15);
+  border:4px solid rgba(255,255,255,.15);
   border-top-color:var(--orange);
   animation:spin .8s linear infinite;
 }
 
 @keyframes spin{
-  to{
-    transform:rotate(360deg);
-  }
+  to{transform:rotate(360deg);}
 }
+
+/* Header */
 
 .site-header{
   position:fixed;
   top:0;
   width:100%;
   z-index:1000;
-  background:rgba(5,9,20,.9);
+  background:rgba(5,9,20,.82);
   backdrop-filter:blur(18px);
   border-bottom:1px solid var(--line);
 }
@@ -99,7 +100,7 @@ textarea{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  padding:14px 0;
+  padding:13px 0;
 }
 
 .brand{
@@ -110,8 +111,8 @@ textarea{
 }
 
 .brand img{
-  width:46px;
-  height:46px;
+  width:44px;
+  height:44px;
   border-radius:14px;
   object-fit:cover;
 }
@@ -156,12 +157,14 @@ textarea{
   border-radius:4px;
 }
 
+/* Hero */
+
 .hero{
   min-height:100svh;
   display:flex;
   align-items:center;
   background:
-    linear-gradient(rgba(5,9,20,.74),rgba(5,9,20,.86)),
+    linear-gradient(rgba(5,9,20,.72),rgba(5,9,20,.88)),
     url("https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop")
     center/cover no-repeat;
 }
@@ -174,8 +177,7 @@ textarea{
 }
 
 .hero-copy{
-  width:min(720px,100%);
-  text-align:left;
+  width:min(700px,100%);
 }
 
 .eyebrow{
@@ -185,8 +187,8 @@ textarea{
   padding:9px 15px;
   border-radius:999px;
   color:var(--orange);
-  background:rgba(255,138,0,.12);
-  border:1px solid rgba(255,138,0,.35);
+  background:rgba(255,138,0,.10);
+  border:1px solid rgba(255,138,0,.32);
   text-transform:uppercase;
   font-size:12px;
   font-weight:800;
@@ -202,20 +204,19 @@ textarea{
 }
 
 .hero h1{
-  font-size:clamp(36px,5vw,62px);
-  line-height:1.02;
-  letter-spacing:-.045em;
+  font-size:clamp(36px,5vw,60px);
+  line-height:1.04;
+  letter-spacing:-.04em;
   margin-bottom:20px;
   font-weight:800;
 }
 
 .hero h1 strong{
   color:var(--orange);
-  font-weight:800;
 }
 
 .hero p{
-  max-width:620px;
+  max-width:600px;
   color:var(--muted);
   font-size:17px;
   line-height:1.65;
@@ -241,58 +242,64 @@ textarea{
 .btn-primary{
   background:linear-gradient(135deg,var(--orange),var(--orange2));
   color:#111;
-  box-shadow:0 14px 38px rgba(255,138,0,.35);
+  box-shadow:0 14px 38px rgba(255,138,0,.28);
 }
 
 .btn-secondary{
-  border:2px solid rgba(255,255,255,.3);
+  border:1px solid rgba(255,255,255,.28);
   color:white;
   background:rgba(255,255,255,.04);
 }
+
+/* Stats */
 
 .stats-section{
   background:var(--dark);
   border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
-  padding:70px 0;
+  padding:68px 0;
 }
 
 .stats-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:26px;
+  gap:24px;
   text-align:center;
 }
 
 .stat-box{
-  padding:24px 16px;
+  padding:22px 14px;
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:26px;
+  backdrop-filter:blur(14px);
 }
 
 .stat-icon{
   color:var(--orange);
-  font-size:34px;
-  margin-bottom:18px;
+  font-size:30px;
+  margin-bottom:16px;
 }
 
 .stat-box h3{
-  font-size:34px;
+  font-size:30px;
   line-height:1;
   font-weight:800;
-  color:white;
 }
 
 .stat-box p{
-  margin-top:14px;
+  margin-top:13px;
   color:var(--muted);
   text-transform:uppercase;
-  letter-spacing:.15em;
-  font-size:12px;
+  letter-spacing:.14em;
+  font-size:11px;
   font-weight:800;
 }
 
+/* Trust */
+
 .trust-strip{
   background:var(--dark);
-  border-top:1px solid var(--line);
   border-bottom:1px solid var(--line);
   padding:18px 0;
 }
@@ -307,6 +314,8 @@ textarea{
   color:#e8eaf0;
 }
 
+/* Headings */
+
 .section-heading{
   max-width:760px;
 }
@@ -320,9 +329,9 @@ textarea{
 }
 
 .section-heading h2{
-  font-size:clamp(28px,4vw,46px);
+  font-size:clamp(28px,4vw,44px);
   line-height:1.08;
-  letter-spacing:-.04em;
+  letter-spacing:-.035em;
   margin:12px 0 14px;
   font-weight:800;
 }
@@ -333,6 +342,8 @@ textarea{
   line-height:1.65;
 }
 
+/* Cards */
+
 .service-card,
 .review-card,
 .faq-item,
@@ -341,30 +352,34 @@ textarea{
 .area-list span{
   background:var(--panel);
   border:1px solid var(--line);
-  border-radius:24px;
+  border-radius:26px;
+  backdrop-filter:blur(14px);
 }
+
+/* Services */
 
 .service-grid{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:20px;
+  gap:18px;
   margin-top:42px;
 }
 
 .service-card{
-  min-height:205px;
+  min-height:200px;
   padding:24px;
   transition:.3s ease;
 }
 
 .service-card:hover{
   transform:translateY(-6px);
+  background:var(--panel2);
 }
 
 .service-card h3{
   color:var(--orange);
-  font-size:19px;
-  line-height:1.2;
+  font-size:18px;
+  line-height:1.25;
   margin-bottom:12px;
   font-weight:800;
 }
@@ -374,6 +389,8 @@ textarea{
   font-size:15px;
   line-height:1.6;
 }
+
+/* Why */
 
 .why,
 .areas,
@@ -391,10 +408,10 @@ textarea{
 }
 
 .image-panel{
-  min-height:460px;
+  min-height:440px;
   border-radius:32px;
   background:
-    linear-gradient(rgba(5,9,20,.2),rgba(5,9,20,.65)),
+    linear-gradient(rgba(5,9,20,.22),rgba(5,9,20,.68)),
     url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=1200&q=80")
     center/cover;
   position:relative;
@@ -411,6 +428,7 @@ textarea{
   border:1px solid var(--line);
   border-radius:22px;
   padding:20px;
+  backdrop-filter:blur(14px);
 }
 
 .image-overlay span{
@@ -422,7 +440,7 @@ textarea{
 
 .image-overlay strong{
   display:block;
-  font-size:23px;
+  font-size:22px;
   line-height:1.15;
   margin-top:6px;
 }
@@ -443,6 +461,8 @@ textarea{
   color:var(--orange);
 }
 
+/* Areas */
+
 .area-list{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -456,15 +476,17 @@ textarea{
   font-weight:800;
 }
 
+/* Reviews */
+
 .review-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:20px;
+  gap:18px;
   margin-top:42px;
 }
 
 .review-card{
-  padding:26px;
+  padding:24px;
 }
 
 .stars{
@@ -486,6 +508,8 @@ textarea{
   color:var(--orange);
   font-size:14px;
 }
+
+/* FAQ */
 
 .faq-list{
   display:grid;
@@ -517,13 +541,15 @@ textarea{
   display:block;
 }
 
+/* Contact */
+
 .contact-callout{
   margin-top:26px;
 }
 
 .contact-callout a{
   color:var(--orange);
-  font-size:30px;
+  font-size:28px;
   font-weight:800;
 }
 
@@ -549,7 +575,7 @@ textarea{
 .contact-form textarea{
   width:100%;
   border:1px solid var(--line);
-  background:#070b15;
+  background:rgba(0,0,0,.25);
   color:white;
   border-radius:15px;
   padding:14px;
@@ -568,6 +594,8 @@ textarea{
   background:linear-gradient(135deg,var(--orange),var(--orange2));
   font-weight:800;
 }
+
+/* Floating Buttons */
 
 .floating-call,
 .chat-launcher{
@@ -593,17 +621,20 @@ textarea{
   padding:14px 20px;
 }
 
+/* Chat */
+
 .chatbot{
   position:fixed;
   left:22px;
   bottom:92px;
   width:min(350px,calc(100vw - 44px));
-  background:var(--panel);
+  background:rgba(17,24,39,.96);
   border:1px solid var(--line);
   border-radius:22px;
   overflow:hidden;
   display:none;
   z-index:900;
+  backdrop-filter:blur(16px);
 }
 
 .chatbot.open{
@@ -615,7 +646,7 @@ textarea{
   justify-content:space-between;
   align-items:center;
   padding:15px;
-  background:#070b15;
+  background:rgba(0,0,0,.22);
   border-bottom:1px solid var(--line);
 }
 
@@ -643,7 +674,7 @@ textarea{
 }
 
 .bot{
-  background:#182338;
+  background:rgba(255,255,255,.08);
 }
 
 .user{
@@ -663,7 +694,7 @@ textarea{
 .chat-form input{
   border:1px solid var(--line);
   border-radius:12px;
-  background:#070b15;
+  background:rgba(0,0,0,.25);
   color:white;
   padding:12px;
   font-size:14px;
@@ -677,6 +708,8 @@ textarea{
   background:var(--orange);
   color:#111;
 }
+
+/* Footer */
 
 .footer{
   background:var(--dark);
@@ -713,6 +746,8 @@ textarea{
   padding-top:22px;
 }
 
+/* Animation */
+
 .reveal{
   opacity:0;
   transform:translateY(22px);
@@ -723,6 +758,8 @@ textarea{
   opacity:1;
   transform:none;
 }
+
+/* Tablet */
 
 @media(max-width:980px){
 
@@ -738,13 +775,14 @@ textarea{
   .nav-links.open{
     display:grid;
     position:absolute;
-    top:74px;
+    top:72px;
     left:4%;
     right:4%;
-    background:var(--panel);
+    background:rgba(17,24,39,.96);
     border:1px solid var(--line);
     border-radius:20px;
     padding:20px;
+    backdrop-filter:blur(16px);
   }
 
   .service-grid,
@@ -763,10 +801,12 @@ textarea{
   }
 }
 
+/* Mobile */
+
 @media(max-width:640px){
 
   .section{
-    padding:72px 0;
+    padding:70px 0;
   }
 
   .nav{
@@ -782,37 +822,49 @@ textarea{
     font-size:15px;
   }
 
+  .hero{
+    overflow:hidden;
+  }
+
   .hero-inner{
-    align-items:flex-start;
-    padding-top:145px;
+    align-items:center;
+    justify-content:center;
+    padding-top:96px;
+    padding-bottom:70px;
   }
 
   .hero-copy{
     text-align:center;
     margin:auto;
+    width:100%;
   }
 
   .eyebrow{
-    font-size:11px;
+    font-size:10px;
     padding:8px 12px;
-    margin-bottom:20px;
+    margin-bottom:18px;
+    white-space:normal;
   }
 
   .hero h1{
-    font-size:36px;
-    line-height:1.06;
-    letter-spacing:-.035em;
+    font-size:34px;
+    line-height:1.07;
+    letter-spacing:-.032em;
     margin-bottom:16px;
   }
 
   .hero p{
-    font-size:16px;
+    font-size:15px;
     line-height:1.55;
+    max-width:330px;
     margin:auto;
   }
 
   .hero-actions{
-    margin-top:28px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:13px;
+    margin-top:26px;
   }
 
   .btn{
@@ -821,17 +873,31 @@ textarea{
     font-size:14px;
   }
 
+  .stats-section{
+    padding:54px 0;
+  }
+
   .stats-grid{
     grid-template-columns:1fr 1fr;
-    gap:34px 18px;
+    gap:14px;
+  }
+
+  .stat-box{
+    padding:18px 10px;
+  }
+
+  .stat-icon{
+    font-size:24px;
+    margin-bottom:12px;
   }
 
   .stat-box h3{
-    font-size:30px;
+    font-size:26px;
   }
 
   .stat-box p{
-    font-size:11px;
+    font-size:10px;
+    letter-spacing:.1em;
   }
 
   .trust-grid,
@@ -843,11 +909,11 @@ textarea{
   }
 
   .image-panel{
-    min-height:340px;
+    min-height:330px;
   }
 
   .section-heading h2{
-    font-size:30px;
+    font-size:29px;
   }
 
   .section-heading p{
@@ -855,132 +921,7 @@ textarea{
   }
 
   .contact-callout a{
-    font-size:26px;
-  }
-
-  .floating-call{
-    right:18px;
-    bottom:18px;
-  }
-
-  .chat-launcher{
-    left:18px;
-    bottom:18px;
-  }
-}
-/* MOBILE FIX — paste at very bottom */
-
-@media(max-width:640px){
-
-  body{
-    overflow-x:hidden;
-  }
-
-  .hero{
-    min-height:100svh;
-    overflow:hidden;
-  }
-
-  .hero-grid,
-  .hero-inner{
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    min-height:100svh;
-    padding-top:115px;
-    padding-bottom:90px;
-  }
-
-  .hero-copy{
-    width:100%;
-    max-width:100%;
-    text-align:center;
-    margin:0 auto;
-  }
-
-  .eyebrow{
-    max-width:100%;
-    font-size:10px;
-    line-height:1.4;
-    padding:8px 12px;
-    margin-bottom:18px;
-    white-space:normal;
-  }
-
-  .hero h1{
-    font-size:35px !important;
-    line-height:1.08 !important;
-    letter-spacing:-.035em;
-    margin-bottom:16px;
-    max-width:100%;
-  }
-
-  .hero p,
-  .hero-subtitle{
-    font-size:15px !important;
-    line-height:1.55;
-    max-width:330px;
-    margin:0 auto;
-  }
-
-  .hero-actions{
-    display:grid;
-    grid-template-columns:1fr;
-    gap:14px;
-    width:100%;
-    margin-top:28px;
-  }
-
-  .btn{
-    width:100%;
-    font-size:14px;
-    padding:15px 18px;
-  }
-
-  .hero-stage,
-  .hero-visual,
-  .hero-photo,
-  .glass-card,
-  .mini-card,
-  .floating-card,
-  .hero-proof,
-  .hero-metrics{
-    display:none !important;
-  }
-
-  .stats-section{
-    padding:54px 0;
-  }
-
-  .stats-grid{
-    grid-template-columns:1fr 1fr;
-    gap:28px 12px;
-  }
-
-  .stat-box{
-    padding:14px 8px;
-  }
-
-  .stat-icon{
-    font-size:26px;
-    margin-bottom:12px;
-  }
-
-  .stat-box h3{
-    font-size:28px;
-  }
-
-  .stat-box p{
-    font-size:10px;
-    letter-spacing:.12em;
-  }
-
-  .trust-grid,
-  .service-grid,
-  .review-grid,
-  .area-list,
-  .footer-grid{
-    grid-template-columns:1fr !important;
+    font-size:25px;
   }
 
   .floating-call{
