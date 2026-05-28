@@ -84,8 +84,6 @@ textarea{
   to{transform:rotate(360deg);}
 }
 
-/* Header */
-
 .site-header{
   position:fixed;
   top:0;
@@ -156,8 +154,6 @@ textarea{
   margin:6px 0;
   border-radius:4px;
 }
-
-/* Hero */
 
 .hero{
   min-height:100svh;
@@ -251,8 +247,6 @@ textarea{
   background:rgba(255,255,255,.04);
 }
 
-/* Stats */
-
 .stats-section{
   background:var(--dark);
   border-top:1px solid var(--line);
@@ -296,8 +290,6 @@ textarea{
   font-weight:800;
 }
 
-/* Trust */
-
 .trust-strip{
   background:var(--dark);
   border-bottom:1px solid var(--line);
@@ -313,8 +305,6 @@ textarea{
   font-size:13px;
   color:#e8eaf0;
 }
-
-/* Headings */
 
 .section-heading{
   max-width:760px;
@@ -342,8 +332,6 @@ textarea{
   line-height:1.65;
 }
 
-/* Cards */
-
 .service-card,
 .review-card,
 .faq-item,
@@ -355,8 +343,6 @@ textarea{
   border-radius:26px;
   backdrop-filter:blur(14px);
 }
-
-/* Services */
 
 .service-grid{
   display:grid;
@@ -390,11 +376,10 @@ textarea{
   line-height:1.6;
 }
 
-/* Why */
-
 .why,
 .areas,
-.faq{
+.faq,
+.map-section{
   background:var(--dark);
 }
 
@@ -461,8 +446,6 @@ textarea{
   color:var(--orange);
 }
 
-/* Areas */
-
 .area-list{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -476,7 +459,21 @@ textarea{
   font-weight:800;
 }
 
-/* Reviews */
+.map-box{
+  margin-top:34px;
+  height:420px;
+  border-radius:28px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:var(--panel);
+  box-shadow:var(--shadow);
+}
+
+.map-box iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
 
 .review-grid{
   display:grid;
@@ -509,8 +506,6 @@ textarea{
   font-size:14px;
 }
 
-/* FAQ */
-
 .faq-list{
   display:grid;
   gap:14px;
@@ -540,8 +535,6 @@ textarea{
 .faq-item.active p{
   display:block;
 }
-
-/* Contact */
 
 .contact-callout{
   margin-top:26px;
@@ -595,8 +588,6 @@ textarea{
   font-weight:800;
 }
 
-/* Floating Buttons */
-
 .floating-call,
 .chat-launcher{
   position:fixed;
@@ -620,8 +611,6 @@ textarea{
   left:22px;
   padding:14px 20px;
 }
-
-/* Chat */
 
 .chatbot{
   position:fixed;
@@ -709,8 +698,6 @@ textarea{
   color:#111;
 }
 
-/* Footer */
-
 .footer{
   background:var(--dark);
   border-top:1px solid var(--line);
@@ -746,8 +733,6 @@ textarea{
   padding-top:22px;
 }
 
-/* Animation */
-
 .reveal{
   opacity:0;
   transform:translateY(22px);
@@ -758,8 +743,6 @@ textarea{
   opacity:1;
   transform:none;
 }
-
-/* Tablet */
 
 @media(max-width:980px){
 
@@ -800,8 +783,6 @@ textarea{
     grid-template-columns:1fr 1fr;
   }
 }
-
-/* Mobile */
 
 @media(max-width:640px){
 
@@ -898,6 +879,11 @@ textarea{
   .stat-box p{
     font-size:10px;
     letter-spacing:.1em;
+  }
+
+  .map-box{
+    height:360px;
+    border-radius:22px;
   }
 
   .trust-grid,
