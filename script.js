@@ -11,6 +11,12 @@ menuToggle?.addEventListener("click", () => {
   navLinks.classList.toggle("open");
 });
 
+document.querySelectorAll(".nav-links a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+  });
+});
+
 const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(entries => {
@@ -32,6 +38,7 @@ document.querySelectorAll(".faq-item").forEach(item => {
 
 document.querySelectorAll("form").forEach(form => {
   form.addEventListener("submit", event => {
+
     event.preventDefault();
 
     if(form.classList.contains("chat-form")) return;
@@ -42,12 +49,12 @@ document.querySelectorAll("form").forEach(form => {
       .map(([k,v]) => `${k}: ${v}`)
       .join("%0D%0A");
 
-    const subject = encodeURIComponent(
-      "Secure Key Auto Service Request"
-    );
+    const subject =
+    encodeURIComponent("Secure Key Auto Service Request");
 
     window.location.href =
     `mailto:service@securekeyauto.com?subject=${subject}&body=${lines || "New service request"}`;
+
   });
 });
 
@@ -67,10 +74,10 @@ closeChat?.addEventListener("click", () => {
 });
 
 const responses = [
-  "For immediate help, call 780-908-7332. For a quote, send your vehicle make, model, year and location.",
-  "We can help with lost keys, lockouts, smart key programming and ignition issues.",
-  "A technician will need your vehicle details and your location to confirm availability.",
-  "This support agent can help guide you to the right Secure Key Auto service."
+  "For immediate help, call 780-908-7332.",
+  "We help with lockouts, lost keys, smart keys and ignition issues.",
+  "Send your vehicle make, model, year and location for a quote.",
+  "Secure Key Auto provides mobile locksmith service across Edmonton."
 ];
 
 chatForm?.addEventListener("submit", event => {
@@ -105,8 +112,5 @@ chatForm?.addEventListener("submit", event => {
     chatMessages.scrollHeight;
 
   }, 450);
-
-  chatMessages.scrollTop =
-  chatMessages.scrollHeight;
 
 });
