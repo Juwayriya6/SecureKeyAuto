@@ -53,10 +53,10 @@ document.querySelectorAll("form").forEach(form => {
       .join("%0D%0A");
 
     const subject =
-    encodeURIComponent("Secure Key Auto Service Request");
+      encodeURIComponent("Secure Key Auto Service Request");
 
     window.location.href =
-    `mailto:service@securekeyauto.com?subject=${subject}&body=${lines || "New service request"}`;
+      `mailto:skautosolutions26@gmail.com?subject=${subject}&body=${lines || "New service request"}`;
   });
 });
 
@@ -75,13 +75,6 @@ closeChat?.addEventListener("click", () => {
   chatbot?.classList.remove("open");
 });
 
-const responses = [
-  "For immediate help, call 780-908-7332.",
-  "We help with lockouts, lost keys, smart keys and ignition issues.",
-  "Send your vehicle make, model, year and location for a quote.",
-  "Secure Key Auto provides mobile locksmith service across Edmonton."
-];
-
 chatForm?.addEventListener("submit", event => {
   event.preventDefault();
 
@@ -90,7 +83,6 @@ chatForm?.addEventListener("submit", event => {
   if(!text) return;
 
   const userMsg = document.createElement("p");
-
   userMsg.className = "user";
   userMsg.textContent = text;
 
@@ -100,18 +92,30 @@ chatForm?.addEventListener("submit", event => {
     chatInput.value = "";
   }
 
+  const emailSubject =
+    encodeURIComponent("Secure Key Auto Chat Request");
+
+  const emailBody =
+    encodeURIComponent(
+      `New chat request from website:\n\n${text}\n\nPlease reply to this customer as soon as possible.`
+    );
+
   setTimeout(() => {
     const botMsg = document.createElement("p");
 
     botMsg.className = "bot";
     botMsg.textContent =
-    responses[Math.floor(Math.random() * responses.length)];
+      "Thanks. Your email app will open so this request can be sent to Secure Key Auto.";
 
     chatMessages?.appendChild(botMsg);
 
     if(chatMessages){
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
+
+    window.location.href =
+      `mailto:skautosolutions26@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+
   }, 450);
 
   if(chatMessages){
