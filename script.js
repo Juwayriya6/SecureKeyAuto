@@ -118,3 +118,47 @@ chatForm?.addEventListener("submit", event => {
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 });
+
+const counters = document.querySelectorAll(".counter");
+
+const runCounter = counter => {
+  const target = parseFloat(counter.dataset.target);
+  const isDecimal = target % 1 !== 0;
+
+  let current = 0;
+  const speed = 45;
+  const increment = target / speed;
+
+  const update = () => {
+    current += increment;
+
+    if(current < target){
+      counter.textContent = isDecimal
+        ? current.toFixed(1)
+        : Math.floor(current);
+
+      requestAnimationFrame(update);
+    } else {
+      counter.textContent = isDecimal
+        ? target.toFixed(1)
+        : target;
+    }
+  };
+
+  update();
+};
+
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      runCounter(entry.target);
+      counterObserver.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold:.6
+});
+
+counters.forEach(counter => {
+  counterObserver.observe(counter);
+});
