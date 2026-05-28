@@ -8,7 +8,7 @@
 
   <meta name="description" content="Secure Key Auto Ltd provides 24/7 mobile auto locksmith service in Edmonton and surrounding areas. Car lockouts, lost car keys, smart key programming, key fob replacement and ignition repair. Call 780-908-7332." />
 
-  <meta name="keywords" content="auto locksmith Edmonton, car locksmith Edmonton, lost car key replacement Edmonton, car lockout Edmonton, key fob programming Edmonton, smart key programming Edmonton, ignition repair Edmonton, mobile locksmith Edmonton, BMW key replacement Edmonton, Mercedes key fob Edmonton" />
+  <meta name="keywords" content="auto locksmith Edmonton, car locksmith Edmonton, lost car key replacement Edmonton, car lockout Edmonton, key fob programming Edmonton, smart key programming Edmonton, ignition repair Edmonton, mobile locksmith Edmonton" />
 
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Secure Key Auto Ltd" />
@@ -20,11 +20,6 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://securekeyauto.com/" />
   <meta property="og:image" content="https://securekeyauto.com/assets/brand-card.png" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Auto Locksmith Edmonton | Secure Key Auto Ltd" />
-  <meta name="twitter:description" content="24/7 mobile auto locksmith service in Edmonton and surrounding areas." />
-  <meta name="twitter:image" content="https://securekeyauto.com/assets/brand-card.png" />
 
   <link rel="icon" href="assets/logo-mark.png" />
   <link rel="stylesheet" href="styles.css" />
@@ -39,23 +34,9 @@
     "telephone": "+1-780-908-7332",
     "image": "https://securekeyauto.com/assets/brand-card.png",
     "description": "24/7 mobile automotive locksmith service for car lockouts, lost car keys, smart key programming, key fob replacement and ignition repair.",
-    "areaServed": [
-      "Edmonton",
-      "Sherwood Park",
-      "St. Albert",
-      "Leduc",
-      "Spruce Grove"
-    ],
+    "areaServed": ["Edmonton", "Sherwood Park", "St. Albert", "Leduc", "Spruce Grove"],
     "openingHours": "Mo-Su 00:00-23:59",
-    "priceRange": "$$",
-    "serviceType": [
-      "Auto locksmith",
-      "Car lockout service",
-      "Lost car key replacement",
-      "Smart key programming",
-      "Key fob programming",
-      "Ignition repair"
-    ]
+    "priceRange": "$$"
   }
   </script>
 </head>
@@ -363,7 +344,10 @@
           </div>
         </div>
 
-        <form class="contact-form reveal">
+        <form
+          class="contact-form reveal"
+          action="https://formspree.io/f/mpqnblbd"
+          method="POST">
 
           <h3>Submit a Request</h3>
 
@@ -381,6 +365,8 @@
           </select>
 
           <textarea name="message" placeholder="Where are you located and what happened?"></textarea>
+
+          <input type="hidden" name="_subject" value="Secure Key Auto Website Lead">
 
           <button type="submit">Submit Request</button>
 
