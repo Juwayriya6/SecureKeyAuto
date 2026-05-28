@@ -40,26 +40,6 @@ document.querySelectorAll(".faq-item").forEach(item => {
   });
 });
 
-document.querySelectorAll("form").forEach(form => {
-  form.addEventListener("submit", event => {
-    event.preventDefault();
-
-    if(form.classList.contains("chat-form")) return;
-
-    const data = new FormData(form);
-
-    const lines = [...data.entries()]
-      .map(([key,value]) => `${key}: ${value}`)
-      .join("%0D%0A");
-
-    const subject =
-      encodeURIComponent("Secure Key Auto Service Request");
-
-    window.location.href =
-      `mailto:skautosolutions26@gmail.com?subject=${subject}&body=${lines || "New service request"}`;
-  });
-});
-
 const launcher = document.querySelector(".chat-launcher");
 const chatbot = document.querySelector(".chatbot");
 const closeChat = document.querySelector(".chat-close");
