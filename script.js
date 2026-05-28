@@ -23,13 +23,13 @@ const reveals = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
-    if (entry.isIntersecting) {
+    if(entry.isIntersecting){
       entry.target.classList.add("show");
       observer.unobserve(entry.target);
     }
   });
 }, {
-  threshold: 0.14
+  threshold:0.14
 });
 
 reveals.forEach(el => observer.observe(el));
@@ -44,20 +44,19 @@ document.querySelectorAll("form").forEach(form => {
   form.addEventListener("submit", event => {
     event.preventDefault();
 
-    if (form.classList.contains("chat-form")) {
-      return;
-    }
+    if(form.classList.contains("chat-form")) return;
 
     const data = new FormData(form);
 
     const lines = [...data.entries()]
-      .map(([key, value]) => `${key}: ${value}`)
+      .map(([key,value]) => `${key}: ${value}`)
       .join("%0D%0A");
 
-    const subject = encodeURIComponent("Secure Key Auto Service Request");
+    const subject =
+    encodeURIComponent("Secure Key Auto Service Request");
 
     window.location.href =
-      `mailto:service@securekeyauto.com?subject=${subject}&body=${lines || "New service request"}`;
+    `mailto:service@securekeyauto.com?subject=${subject}&body=${lines || "New service request"}`;
   });
 });
 
@@ -88,32 +87,34 @@ chatForm?.addEventListener("submit", event => {
 
   const text = chatInput?.value.trim();
 
-  if (!text) return;
+  if(!text) return;
 
   const userMsg = document.createElement("p");
+
   userMsg.className = "user";
   userMsg.textContent = text;
 
   chatMessages?.appendChild(userMsg);
 
-  if (chatInput) {
+  if(chatInput){
     chatInput.value = "";
   }
 
   setTimeout(() => {
     const botMsg = document.createElement("p");
+
     botMsg.className = "bot";
     botMsg.textContent =
-      responses[Math.floor(Math.random() * responses.length)];
+    responses[Math.floor(Math.random() * responses.length)];
 
     chatMessages?.appendChild(botMsg);
 
-    if (chatMessages) {
+    if(chatMessages){
       chatMessages.scrollTop = chatMessages.scrollHeight;
     }
   }, 450);
 
-  if (chatMessages) {
+  if(chatMessages){
     chatMessages.scrollTop = chatMessages.scrollHeight;
   }
 });
